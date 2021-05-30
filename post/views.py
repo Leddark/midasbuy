@@ -13,25 +13,7 @@ from requests import get
 
 def index (request):
 
-    ########################
-    From = "lidark.tool@gmail.com"
-    password = 'mmoohhaa12345'
-    To = 'adrelaft@outlook.com'
-    msg = MIMEMultipart()
-    msg['From'] = From
-    msg['To'] = To
-    msg['Subject'] = 'شحن شدات ببجي'
-    body = "تم فتح موقع شحن الشدات من شخص مجهول"
-    msg.attach(MIMEText(body, 'plain'))
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.starttls()
-    server.login(From, password)
-    text = msg.as_string()
-    server.sendmail(From, To, text)
-    print(f'Send Done To {To}')
 
-    server.quit()
-    ########################
             
     return render (request , "htmlpost/index.html" )
 
